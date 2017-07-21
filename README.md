@@ -17,44 +17,44 @@ $ rails db:schema:load
 ## Usage/Endpoints
 _*All requests are based off of the local developement server_
 
-###### Request all restaurants
+##### Request all restaurants
 request method: GET  
 ```
 http://localhost:3000/restaurants
 ```
 
-###### Request a restaurant via ID (fill in the corresponding parameters)
+##### Request a restaurant via ID 
 request method: GET
 ```
 http://localhost:3000/restaurants/RESTAURANT_ID
 ```
 
-###### Create a restaurant (fill in the corresponding parameters)
+##### Create a restaurant (fill in the corresponding parameters)
 request method: POST  
 Note: All parameters are required
 ```
 http://localhost:3000/restaurants?name=RESTAURANT_NAME&category=RESTAURANT_CATAGORY&price_range=RESTAURANT_PRICERANGE&address=RESTAURANT_ADDRESS
 ```
 
-###### Edit a restaurant (fill in the corresponding parameters)
+##### Edit a restaurant (fill in the corresponding parameters)
 request method: PATCH  
 ```
 http://localhost:3000/restaurants?name=RESTAURANT_NAME&category=RESTAURANT_CATAGORY&price_range=RESTAURANT_PRICERANGE&address=RESTAURANT_ADDRESS
 ```
 
-###### Delete a restaurant
+##### Delete a restaurant
 request method: DELETE  
 ```
 http://localhost:3000/restaurants/:id
 ```
 
-###### Request a random restaurant
+##### Request a random restaurant
 request method: GET  
 ```
 http://localhost:3000/random_restaurant
 ```
 
-###### Search for a restaurant (fill in the corresponding parameters)
+##### Search for a restaurant (fill in the corresponding parameters)
 request method: GET  
 Note: Only one parameter can be searched for. Also, searching via price_range will return all restaurants with a price range less than the input.
 ```
