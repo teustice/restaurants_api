@@ -1,24 +1,72 @@
-# README
+# Portland Restaurants API
+_API for restaurant information in the Portland, Or area_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
+* Built on Ruby v2.4, Rails 5.1
 
-Things you may want to cover:
+* Clone the repository, start a postgres server, and run the following commands
 
-* Ruby version
+```
+$ bundle install
+$ rails db:create
+$ rails db:schema:load
+```
+* You can run ```$ rails s``` to start a development server
+* Also, you can seed the database by running ```$ rails db:seed```
 
-* System dependencies
+## Usage/Endpoints
+_*All requests are based off of the local developement server_
 
-* Configuration
+###### Request all restaurants
+request method: GET  
+```
+http://localhost:3000/restaurants
+```
 
-* Database creation
+###### Request a restaurant via ID (fill in the corresponding parameters)
+request method: GET
+```
+http://localhost:3000/restaurants/RESTAURANT_ID
+```
 
-* Database initialization
+###### Create a restaurant (fill in the corresponding parameters)
+request method: POST  
+Note: All parameters are required
+```
+http://localhost:3000/restaurants?name=RESTAURANT_NAME&category=RESTAURANT_CATAGORY&price_range=RESTAURANT_PRICERANGE&address=RESTAURANT_ADDRESS
+```
 
-* How to run the test suite
+###### Edit a restaurant (fill in the corresponding parameters)
+request method: PATCH  
+```
+http://localhost:3000/restaurants?name=RESTAURANT_NAME&category=RESTAURANT_CATAGORY&price_range=RESTAURANT_PRICERANGE&address=RESTAURANT_ADDRESS
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+###### Delete a restaurant
+request method: DELETE  
+```
+http://localhost:3000/restaurants/:id
+```
 
-* Deployment instructions
+###### Request a random restaurant
+request method: GET  
+```
+http://localhost:3000/random_restaurant
+```
 
-* ...
+###### Search for a restaurant (fill in the corresponding parameters)
+request method: GET  
+Note: Only one parameter can be searched for. Also, searching via price_range will return all restaurants with a price range less than the input.
+```
+http://localhost:3000/search_restaurant?name=RESTAURANT_NAME
+http://localhost:3000/search_restaurant?category=RESTAURANT_CATEGORY
+http://localhost:3000/search_restaurant?price_range=RESTAURANT_PRICERANGE
+```
+
+## Further help
+
+For further help, please contact me through github.
+
+## License
+
+MIT, Copyright by Tanner Eustice 2017
