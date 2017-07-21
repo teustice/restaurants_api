@@ -5,7 +5,7 @@ describe "update a restaurant endpoint", :type => :request do
 
   before do
     restaurant = Restaurant.all.last
-    put "/restaurants/#{restaurant.id}", params: {name: "test_name", category: "test_category", price_range: "test_price_range", address: "test_address"}
+    put "/restaurants/#{restaurant.id}", params: {name: "test_name", category: "test_category", price_range: 10, address: "test_address"}
   end
 
   it 'updates a restaurant' do

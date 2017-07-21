@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170721155634) do
     t.string "name"
     t.string "category"
     t.string "address"
-    t.string "price_range"
+    t.integer "price_range"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

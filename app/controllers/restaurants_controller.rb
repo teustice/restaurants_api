@@ -44,6 +44,15 @@ class RestaurantsController < ApplicationController
     json_response(JSONAPI::Serializer.serialize(@restaurant), 200)
   end
 
+  def search
+      results = Restaurant.search(params)
+      if results
+        json_response(JSONAPI::Serializer.serialize(results, is_collection: true), 200)
+      else
+        json_response({"data":{"type": "errors","attributes": {"error": "You can't pass multiple parameters into a search."}}}, 409)
+      end
+  end
+
   private
   def restaurant_params
     params.permit(:id, :name, :category, :price_range, :address)
