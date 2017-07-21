@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "get all restaurants endpoint", :type => :request do
-  let!(:restaurats) { FactoryGirl.create_list(:restaurant, 20)}
+  let!(:restaurants) { FactoryGirl.create_list(:restaurant, 20)}
 
   it 'returns all restaurants' do
     get '/restaurants'

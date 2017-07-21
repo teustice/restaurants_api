@@ -23,7 +23,7 @@ request method: GET
 http://localhost:3000/restaurants
 ```
 
-##### Request a restaurant via ID 
+##### Request a restaurant via ID
 request method: GET
 ```
 http://localhost:3000/restaurants/RESTAURANT_ID
@@ -45,7 +45,7 @@ http://localhost:3000/restaurants?name=RESTAURANT_NAME&category=RESTAURANT_CATAG
 ##### Delete a restaurant
 request method: DELETE  
 ```
-http://localhost:3000/restaurants/:id
+http://localhost:3000/restaurants/RESTAURANT_ID
 ```
 
 ##### Request a random restaurant
