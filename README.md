@@ -19,8 +19,10 @@ _*All requests are based off of the local developement server_
 
 ##### Request all restaurants
 request method: GET  
+Note: The requests are paginated in groups of 20. To view more, append the corresponding page parameter shown below.
 ```
 http://localhost:3000/restaurants
+http://localhost:3000/restaurants?page=2
 ```
 
 ##### Request a restaurant via ID

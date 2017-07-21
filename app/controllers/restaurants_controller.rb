@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
   include ErrorSerializer
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.page params[:page]
     json_response(JSONAPI::Serializer.serialize(@restaurants , is_collection: true), 200)
   end
 
