@@ -39,6 +39,11 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def random
+    @restaurant = Restaurant.all.sample
+    json_response(JSONAPI::Serializer.serialize(@restaurant), 200)
+  end
+
   private
   def restaurant_params
     params.permit(:id, :name, :category, :price_range, :address)
